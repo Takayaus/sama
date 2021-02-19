@@ -81,5 +81,6 @@ test:
 production:
   <<: *default
   database: sam_production
-  username: sam
-  password: <%= ENV['SAM_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>
